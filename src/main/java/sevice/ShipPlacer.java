@@ -13,8 +13,6 @@ public class ShipPlacer {
             int[][] coordinates = splitRawCoordinates(rawcoordinates,numberofships);
             return coordinateConverter(coordinates,mapsize);
 
-            //TODO meg lehessen adni a hajók számát
-
         }
         private List<String> generateRawCoordinates(int mapsize,int numberofships){
 

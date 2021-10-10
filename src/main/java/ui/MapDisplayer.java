@@ -21,7 +21,7 @@ public class MapDisplayer {
 
 
     }
-    public void showMap(boolean[][] map) throws MapShowExeption {
+    public void showMap(int[][] map) throws MapShowExeption {
 
         if(map.length>10){
             throw new MapShowExeption("The size of the map must be lower than 10!");

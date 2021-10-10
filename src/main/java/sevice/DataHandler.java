@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class DataHandler {
 
+    Scanner scanner = new Scanner(System.in);
     public int readInMapSize() throws MapReadExeption {
         System.out.print("Please enter the size of the map: ");
         Scanner scanner=null;
@@ -25,10 +26,11 @@ public class DataHandler {
         return size;
 
     }
-    public String readInOption(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Your turn: ");
-        return scanner.nextLine();
+    public int readInInt(){
+        return scanner.nextInt();
 
+    }
+    public String readInString(){
+        return scanner.nextLine();
     }
 }

@@ -16,10 +16,8 @@ public class Main {
         ShipPlacer ships = new ShipPlacer();
         MapDisplayer display = new MapDisplayer();
 
-        int[][] map
-        boolean[][] reservedpoints = ships.placeShips(3,5);
+        boolean[][] reservedpoints = ships.placeShips(5,5);
 
-        display.showMap(reservedpoints);
 
 
         for (int i = 0; i < 3; i++) {
