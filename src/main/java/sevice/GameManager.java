@@ -1,54 +1,31 @@
 package sevice;
 
-import model.MapVO;
-import sevice.exeption.MapShowExeption;
-import ui.MapDisplayer;
-
-import java.util.Arrays;
+import sevice.exeption.OptionReadException;
 
 public class GameManager {
 
+    public String formatOption(String rawOption) throws OptionReadException {
 
-    int [][] maparray;
-    MapInitializer map = new MapInitializer();
-    MapDisplayer displayer = new MapDisplayer();
-    ShipPlacer shipplacer = new ShipPlacer();
-    DataHandler datain = new DataHandler();
+        char row = rawOption.toUpperCase().charAt(0);
+        int column = Integer.parseInt(rawOption.substring(1, 2));
+        String result = null;
+        if (isContinue(row) && isContinue(column)) {
+            result = String.valueOf(row - 65) + (int) column;
 
-    public void startGame() throws MapShowExeption {
-        String name = datain.readInString();
-        int mapsize = datain.readInInt();
-        int numberofships = datain.readInInt();
-        MapVO data = new MapVO(mapsize,map.getMap(mapsize),shipplacer.placeShips(mapsize,numberofships));
-
-        while (isContinue(data.getReservedFields())){
-            displayer.showMap(data.getMap());
-            String option = formatOption(datain.readInString());
-
+        } else {
+            throw new OptionReadException("Invalid input!");
         }
 
-
-    }
-
-
-    private boolean isContinue(boolean[][] reserverfields){
-
-        //TODO optimize!!!
-        boolean result = false;
-        for (int i = 0; i < reserverfields.length; i++) {
-            for (int j = 0; j < reserverfields.length; j++) {
-
-                if(reserverfields[i][j]){
-                    result=true;
-                }
-            }
-        }
         return result;
     }
-    private String formatOption(String rawoption){
 
-        char row = rawoption.charAt(0);
-        return String.valueOf(row-65)+rawoption.charAt(1);
+    private boolean isContinue(char row) {
+        return row >= 'A' && row <= 'I';
+
+    }
+
+    private boolean isContinue(int column) {
+        return column >= 0 && column <= 8;
 
     }
 }

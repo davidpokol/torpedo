@@ -32,6 +32,12 @@
             <version>3.12.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>1.8.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,7 +56,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        hu.nye.progtech.sudoku.Main
+                                        hu.nye.progtech.torpedo.Main
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -72,9 +78,10 @@
                 <version>0.8.2</version>
                 <configuration>
                     <excludes>
-                        <exclude>hu/nye/progtech/sudoku/model/*</exclude>
-                        <exclude>hu/nye/progtech/sudoku/Main.*</exclude>
-                        <exclude>hu/nye/progtech/sudoku/ui/PrintWrapper.*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/model/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/Main.*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/ui/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/**/*Exception.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

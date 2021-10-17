@@ -1,37 +1,33 @@
-import sevice.DataHandler;
-import sevice.ShipPlacer;
-import sevice.exeption.MapReadExeption;
-import sevice.exeption.MapShowExeption;
-import ui.MapDisplayer;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-import javax.xml.crypto.Data;
-import java.util.*;
-import java.util.stream.IntStream;
+import sevice.MapInitializer;
+import sevice.ShipGenerator;
+import sevice.exeption.MapReadException;
+import sevice.exeption.OptionReadException;
+import sevice.input.DataReader;
 
 public class Main {
 
-    public static void main(String[] args) throws MapReadExeption, MapShowExeption {
+    public static void main(String[] args) throws MapReadException, OptionReadException {
 
-        DataHandler datain = new DataHandler();
-        ShipPlacer ships = new ShipPlacer();
-        MapDisplayer display = new MapDisplayer();
+        BufferedInputStream is = new BufferedInputStream(System.in);
+        DataReader reader = new DataReader(new BufferedReader(new InputStreamReader(is)));
 
-        boolean[][] reservedpoints = ships.placeShips(5,5);
+        MapInitializer initializer = new MapInitializer();
+        ShipGenerator ship = new ShipGenerator();
 
+        System.out.print("Please enter the size of the map: ");
+        int size = Integer.parseInt(reader.readInput());
 
+        for (int i = 1; i < size; i++) {
+            int[][] currentShip = ship.getShip(i);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-
-            }
         }
 
+        int[][] map = initializer.getMap(size);
 
     }
-
-
-
-
-
 
 }
