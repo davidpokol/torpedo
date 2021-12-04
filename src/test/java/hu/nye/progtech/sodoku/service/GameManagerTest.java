@@ -2,24 +2,24 @@ package hu.nye.progtech.sodoku.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sevice.GameManager;
-import sevice.exeption.OptionReadException;
+import hu.nye.torpedo.service.util.ShipReferenceUtil;
+import hu.nye.torpedo.service.exeption.OptionReadException;
 
 
 public class GameManagerTest {
     private static final String INPUT = "d1";
     private static final String BADINPUT = "11";
 
-    private GameManager underTest = new GameManager();
+    private ShipReferenceUtil underTest = new ShipReferenceUtil();
 
     @Test
     public void testFormatOptionShouldReturnTheProperCoordinateInStringWhenTheFirstCharacterInInputIsLowerCase() throws OptionReadException {
 
         //Given
-        String expected ="31";
+        int[] expected = {3,1};
 
         //When
-        String output = underTest.formatOption(INPUT);
+        int[] output = underTest.formatOption(INPUT);
 
         //Then
         Assertions.assertEquals(output,expected);
@@ -30,14 +30,12 @@ public class GameManagerTest {
 
         //Given
         boolean thrown = false;
-        String result = null;
+        int[] result = null;
 
         //When
-        try {
-            result = underTest.formatOption(BADINPUT);
-        } catch (OptionReadException e) {
-            thrown = true;
-        }
+
+        result = underTest.formatOption(BADINPUT);
+
 
         //Then
         Assertions.assertTrue(thrown);

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sevice.ShipGenerator;
+import hu.nye.torpedo.service.ship.ShipGenerator;
 
 public class ShipGeneratorTest {
 
@@ -15,7 +15,7 @@ public class ShipGeneratorTest {
     public void testGetShipShouldReturnATwoDimensionalArrayInTheRightScope(){
 
         //Given
-        int[][] result = underTest.getShip(LENGTH);
+        int[][] result = underTest.getShip(LENGTH,5);
 
         //When
         boolean expected = Arrays.stream(result).flatMapToInt(Arrays::stream).allMatch(a->a<LENGTH);

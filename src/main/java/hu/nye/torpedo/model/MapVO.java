@@ -1,39 +1,35 @@
-package model;
+package hu.nye.torpedo.model;
 
 import java.util.Arrays;
-import java.util.Objects;
 
-public final class MapVO {
+public class MapVO {
 
-    private final int mapSize;
-    private final int [][] map;
-    private final boolean[][] reservedFields;
+    private final String [][] map;
+    private final boolean[][] shipMap;
 
-
-    public MapVO(int mapsize, int[][] map, boolean[][] reservedPoints) {
-        this.mapSize = mapsize;
+    public MapVO(String[][] map, boolean[][] reservedPoints) {
         this.map = map;
-        this.reservedFields = reservedPoints;
+        this.shipMap = reservedPoints;
     }
 
     public int getMapSize() {
-        return mapSize;
+        return map.length;
     }
 
-    public int[][] getMap() {
+    public String[][] getMap() {
         return deepCopy(map);
     }
 
-    public boolean[][] getReservedFields() {
-        return deepCopy(reservedFields);
+    public boolean[][] getShipMap() {
+        return deepCopy(shipMap);
     }
 
-    private int[][] deepCopy(int[][] array) {
+    private String[][] deepCopy(String[][] array) {
 
-        int[][] copy = new int[array.length][];
+        String[][] copy = new String[array.length][];
 
         for (int i = 0; i < array.length; i++) {
-            copy[i] = new int[array[i].length];
+            copy[i] = new String[array[i].length];
             for (int j = 0; j < array.length; j++) {
                 copy[i][j] = array[i][j];
             }
@@ -62,16 +58,22 @@ public final class MapVO {
             return false;
         }
         MapVO mapVO = (MapVO) o;
-        return mapSize == mapVO.mapSize && Arrays.deepEquals(map, mapVO.map)
-                && Arrays.deepEquals(reservedFields, mapVO.reservedFields);
+        return Arrays.deepEquals(map, mapVO.map) && Arrays.deepEquals(shipMap, mapVO.shipMap);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(mapSize);
-        result = 31 * result + Arrays.deepHashCode(map);
-        result = 31 * result + Arrays.deepHashCode(reservedFields);
+        int result = Arrays.deepHashCode(map);
+        result = 31 * result + Arrays.deepHashCode(shipMap);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "MapVO{" +
+                "map=" + Arrays.toString(map) +
+                ", shipMap=" + Arrays.toString(shipMap) +
+                '}';
     }
 }
 

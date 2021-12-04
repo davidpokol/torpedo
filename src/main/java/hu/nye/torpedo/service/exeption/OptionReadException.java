@@ -1,4 +1,4 @@
-package sevice.exeption;
+package hu.nye.torpedo.service.exeption;
 
 public class OptionReadException extends Exception {
 

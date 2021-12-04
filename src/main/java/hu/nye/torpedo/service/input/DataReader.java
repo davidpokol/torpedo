@@ -1,4 +1,4 @@
-package sevice.input;
+package hu.nye.torpedo.service.input;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,15 +6,24 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Reads data from console.
+ */
 public class DataReader {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataReader.class);
     private final BufferedReader reader;
 
+    /**
+     *Class constructor.
+     */
     public DataReader(BufferedReader reader) {
         this.reader = reader;
     }
 
+    /**
+     *Reads input from the console.
+     */
     public String readInput() {
         String input = null;
 

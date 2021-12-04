@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>hu.nye.progtech</groupId>
+    <groupId>hu.nye</groupId>
     <artifactId>torpedo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -15,9 +15,33 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.12</version>
+        </dependency>
+
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>3.0.1</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -31,12 +55,6 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>3.12.4</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>1.8.1</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -56,7 +74,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        hu.nye.progtech.torpedo.Main
+                                        hu.nye.torpedo.Main
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -78,10 +96,9 @@
                 <version>0.8.2</version>
                 <configuration>
                     <excludes>
-                        <exclude>hu/nye/progtech/torpedo/model/*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/Main.*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/ui/*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/**/*Exception.*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.progtech.torpedo.model/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.Main.*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.progtech.torpedo.ui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

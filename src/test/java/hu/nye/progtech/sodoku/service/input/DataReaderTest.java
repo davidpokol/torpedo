@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import sevice.input.DataReader;
+import hu.nye.torpedo.service.input.DataReader;
 
 
 @ExtendWith(MockitoExtension.class)
