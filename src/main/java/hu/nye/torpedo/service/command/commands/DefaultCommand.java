@@ -4,6 +4,9 @@ import hu.nye.torpedo.service.command.Command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * In case of wrong input, the DEFAULT COMMAND runs.
+ */
 public class DefaultCommand implements Command {
 
     public static final Logger LOG = LoggerFactory.getLogger(DefaultCommand.class);

@@ -20,8 +20,8 @@ public class MapReader {
     private BufferedReader reader;
     private final List<String> result = new ArrayList<>();
 
-    /**
-     * @return String list which contains lines of the cpu map
+    /** Returns String list which contains lines of the cpu map.
+     *
      * @throws IOException when the file not found
      * @throws FileReadException when IOException occurs
      */

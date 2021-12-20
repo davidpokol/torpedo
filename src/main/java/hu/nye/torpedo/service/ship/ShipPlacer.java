@@ -5,8 +5,7 @@ package hu.nye.torpedo.service.ship;
  */
 public class ShipPlacer {
 
-    /**
-     * This method places a ship in a map.
+    /** This method places a ship in a map.
      *
      * @param coordinates which defines start and end points of a ship.
      */
@@ -36,5 +35,4 @@ public class ShipPlacer {
         }
         return map;
     }
-
 }

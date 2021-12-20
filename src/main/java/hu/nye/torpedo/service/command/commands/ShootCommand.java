@@ -2,6 +2,7 @@ package hu.nye.torpedo.service.command.commands;
 
 import hu.nye.torpedo.model.GameState;
 import hu.nye.torpedo.service.command.Command;
+import hu.nye.torpedo.service.exeption.XmlException;
 import hu.nye.torpedo.service.game.GameCycle;
 import hu.nye.torpedo.service.game.GameManager;
 import hu.nye.torpedo.service.input.DataReader;
@@ -9,6 +10,9 @@ import hu.nye.torpedo.service.util.CpuPointGeneratorUtil;
 import hu.nye.torpedo.service.util.PointValidatorUtil;
 import hu.nye.torpedo.service.util.ShipReferenceUtil;
 
+/**
+ * This class managing the user's shots. The user can shoot at a location of the cpu's map.
+ */
 public class ShootCommand implements Command {
 
     private final GameState gameState;
@@ -63,7 +67,5 @@ public class ShootCommand implements Command {
         showCommand.process("String");
 
         gameState.setShouldExit(!gameCycle.isInGame());
-
-
     }
 }

@@ -4,16 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import hu.nye.torpedo.persistance.JdbcGameManager;
-import hu.nye.torpedo.persistance.JdbcGameSavesRepository;
+import hu.nye.torpedo.persistance.jdbc.JdbcGameManager;
+import hu.nye.torpedo.persistance.jdbc.JdbcGameSavesRepository;
 import hu.nye.torpedo.service.util.MapToStringUtil;
 import hu.nye.torpedo.service.util.MapUnwrapperUtil;
 import hu.nye.torpedo.service.util.MapUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class for DATABASE manager classes.
+ */
 @Configuration
-public class RepositoryConfig {
+public class JdbcRepositoryConfig {
 
     public static final String URL = "jdbc:h2:tcp://localhost/~/test";
     public static final String USERNAME = "sa";

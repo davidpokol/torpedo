@@ -1,14 +1,14 @@
 package hu.nye.torpedo.service.util;
 
 /**
- * Method of this class converts Map to String.
+ * Methods of this class converts Map to String.
  */
 public class MapToStringUtil {
 
     private final MapUtil mapUtil;
 
     /**
-     *Class constructor.
+     * Class constructor.
      */
     public MapToStringUtil(MapUtil mapUtil) {
         this.mapUtil = mapUtil;

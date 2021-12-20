@@ -1,4 +1,4 @@
-package hu.nye.torpedo.persistance;
+package hu.nye.torpedo.persistance.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,9 @@ import java.util.List;
 import hu.nye.torpedo.model.GameState;
 import hu.nye.torpedo.service.util.MapToStringUtil;
 
-
+/**
+ * Helps in database managing.
+ */
 public class JdbcGameManager {
 
     private final Connection connection;
@@ -28,6 +30,9 @@ public class JdbcGameManager {
     private static final String DELETE_STATEMENT = "DELETE FROM game_saves WHERE id = ?;";
     private static final String SELECT_USER_SAVES_STATEMENT = "SELECT ID, Date FROM game_saves WHERE userName = ?;";
 
+    /**
+     * Shows all saved games, of the user.
+     */
     public List<String> showGameSavesOfUser(String userName) {
 
         List<String> result = new ArrayList<>();
@@ -45,7 +50,8 @@ public class JdbcGameManager {
         return result;
     }
 
-    /**
+    /** Deletes a game state save, at an ID.
+     *
      * To override a save, the previous save must be deleted.
      *
      * @throws SQLException if an error occurs while deleting a game state.
@@ -57,7 +63,8 @@ public class JdbcGameManager {
         }
     }
 
-    /**
+    /** Inserts new save at an ID.
+     *
      * @throws SQLException if an error occurs while saving a game state.
      */
     public void insertNewSave(GameState gameState, String saveId) throws SQLException {
@@ -82,5 +89,4 @@ public class JdbcGameManager {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
         return formatter.format(new Date(System.currentTimeMillis()));
     }
-
 }

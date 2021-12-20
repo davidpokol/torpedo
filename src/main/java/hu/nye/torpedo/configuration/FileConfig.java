@@ -8,7 +8,9 @@ import hu.nye.torpedo.service.input.DataReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
+/**
+ * Configuration class for FILE manager classes.
+ */
 @Configuration
 public class FileConfig {
 
@@ -17,5 +19,4 @@ public class FileConfig {
         BufferedInputStream is = new BufferedInputStream(System.in);
         return new DataReader(new BufferedReader(new InputStreamReader(is)));
     }
-
 }

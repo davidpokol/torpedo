@@ -5,21 +5,20 @@ import hu.nye.torpedo.model.MapVO;
 import hu.nye.torpedo.model.UserMapVO;
 
 /**
- * Managing the game progress.
+ * Managing game progress.
  */
 public class GameManager {
 
     private final GameState gameState;
 
     /**
-     *Class constructor.
+     * Class constructor.
      */
     public GameManager(GameState gameState) {
         this.gameState = gameState;
     }
 
-    /**
-     * Shoots at a point of the cpu's map.
+    /** Shoots at a point of the cpu's map.
      *
      * @param coordinates has the coordinates of the targeted point.
      * @return the user's value object that already contains the shot point
@@ -44,9 +43,9 @@ public class GameManager {
             return result;
     }
 
-    /**
+    /** Returns the  cpu's value object that already contains the shot point.
+     *
      * @param coordinates has the coordinates of the targeted point
-     * @return the  cpu's value object that already contains the shot point
      */
     public boolean cpuShoot(int[] coordinates) {
 

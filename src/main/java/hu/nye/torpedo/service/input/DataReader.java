@@ -15,24 +15,23 @@ public class DataReader {
     private final BufferedReader reader;
 
     /**
-     *Class constructor.
+     * Class constructor.
      */
     public DataReader(BufferedReader reader) {
         this.reader = reader;
     }
 
     /**
-     *Reads input from the console.
+     * Reads input from the console.
      */
     public String readInput() {
-        String input = null;
 
+        String input = null;
         try {
             input = reader.readLine();
         } catch (IOException e) {
             LOG.error("Exception occurred while reading user input", e);
         }
-
         return input;
     }
 }

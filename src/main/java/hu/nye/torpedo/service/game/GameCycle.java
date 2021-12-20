@@ -1,6 +1,8 @@
 package hu.nye.torpedo.service.game;
 
 import hu.nye.torpedo.model.GameState;
+import hu.nye.torpedo.persistance.xml.XmlHighScoreRepository;
+import hu.nye.torpedo.ui.WinnerText;
 
 /**
  * Checks if is there any ships left.
@@ -8,13 +10,17 @@ import hu.nye.torpedo.model.GameState;
 public class GameCycle {
 
     private final GameState gameState;
+    private final XmlHighScoreRepository xmlHighScoreRepository;
+    private final WinnerText winnerText;
 
-    public GameCycle(GameState gameState) {
+    public GameCycle(GameState gameState, XmlHighScoreRepository xmlHighScoreRepository, WinnerText winnerText) {
         this.gameState = gameState;
+        this.xmlHighScoreRepository = xmlHighScoreRepository;
+        this.winnerText = winnerText;
     }
 
     /**
-     * @return true if there is no more ships left on neither maps, otherwise it is false.
+     * Returns true if there is no more ships left on neither maps, otherwise it is false.
      */
     public boolean isInGame() {
 
@@ -35,19 +41,21 @@ public class GameCycle {
                 }
             }
         }
-        winnerText(cpuShipCount, userShipCount);
+        updateHighScore(cpuShipCount, userShipCount);
         return !(cpuShipCount == 0 || userShipCount == 0);
     }
 
     /**
-     *This method writes out the winner, if the game ended.
+     * This method calls the xmlHighScoreRepository class, in order to update the high-score.
      **/
-    private void winnerText(int cpuShips, int userShips) {
-
+    private void updateHighScore(int cpuShips, int userShips) {
         if (userShips == 0) {
-            System.out.println("You won! :)");
+            winnerText.player();
+            xmlHighScoreRepository.update(gameState.getCurrentUserMap().getUserName());
+
         } else if (cpuShips == 0) {
-            System.out.println("The CPU won! :(");
+            winnerText.cpu();
+            xmlHighScoreRepository.update("The CPU");
         }
     }
 }

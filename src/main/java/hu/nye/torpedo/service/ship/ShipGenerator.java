@@ -14,8 +14,7 @@ public class ShipGenerator {
     private static final Logger LOG = LoggerFactory.getLogger(DataReader.class);
     private final Random random = new Random();
 
-    /**
-     * This method generates a ship depends on the size of a map.
+    /** This method generates a ship depends on the size of the map.
      *
      * @param length is the length of the generated ship.
      */

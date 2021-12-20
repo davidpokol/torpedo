@@ -16,7 +16,7 @@ public class GameStepPerformer {
     private final InputHandler inputHandler;
 
     /**
-     *Class constructor
+     * Class constructor.
      */
     public GameStepPerformer(DataReader fileReader, InputHandler inputHandler) {
         this.fileReader = fileReader;

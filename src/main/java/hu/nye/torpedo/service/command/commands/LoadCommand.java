@@ -3,12 +3,14 @@ package hu.nye.torpedo.service.command.commands;
 import java.util.List;
 
 import hu.nye.torpedo.model.GameState;
-import hu.nye.torpedo.persistance.JdbcGameManager;
-import hu.nye.torpedo.persistance.JdbcGameSavesRepository;
+import hu.nye.torpedo.persistance.jdbc.JdbcGameManager;
+import hu.nye.torpedo.persistance.jdbc.JdbcGameSavesRepository;
 import hu.nye.torpedo.service.command.Command;
 import hu.nye.torpedo.service.input.DataReader;
 
-
+/**
+ * This class managing the game state loading from the database.
+ */
 public class LoadCommand implements Command {
 
     private final JdbcGameSavesRepository jdbcGameSavesRepository;
@@ -54,7 +56,7 @@ public class LoadCommand implements Command {
                     System.out.println("Which save would you like to load?");
                     option = dataReader.readInput();
 
-                } while (isValidSaveId(saves, option));
+                } while (!isValidSaveId(saves, option));
 
             }
             GameState loadedGameState = jdbcGameSavesRepository.load(option);
@@ -65,7 +67,8 @@ public class LoadCommand implements Command {
     }
 
     private boolean isValidSaveId(List<String> saves, String option) {
-        return saves.stream().noneMatch(a -> a.startsWith(option)) &&
-                option.length() != gameState.getCurrentUserMap().getUserName().length() + 1;
+
+        return saves.stream().anyMatch(a -> a.startsWith(option)) &&
+                option.length() == (gameState.getCurrentUserMap().getUserName().length() + 1);
     }
 }

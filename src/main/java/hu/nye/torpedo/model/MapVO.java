@@ -2,6 +2,9 @@ package hu.nye.torpedo.model;
 
 import java.util.Arrays;
 
+/**
+ * Stores the CPU'S data in the live game.
+ */
 public class MapVO {
 
     private final String [][] map;

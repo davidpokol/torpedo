@@ -1,4 +1,4 @@
-package hu.nye.torpedo.persistance;
+package hu.nye.torpedo.persistance.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,10 @@ import hu.nye.torpedo.service.util.MapUnwrapperUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseable {
+/**
+ * Helps in saving/loading the game state to/from the database.
+ */
+public class JdbcGameSavesRepository implements AutoCloseable {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcGameSavesRepository.class);
     private static final String SELECT_STATEMENT = "SELECT * FROM game_saves WHERE ID = ?;";
@@ -20,6 +23,9 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
     private final JdbcGameManager jdbcGameManager;
     private final MapUnwrapperUtil mapUnwrapperUtil;
 
+    /**
+     * Class constructor.
+     */
     public JdbcGameSavesRepository(Connection connection, JdbcGameManager jdbcGameManager,
                                    MapUnwrapperUtil mapUnwrapperUtil) {
         this.connection = connection;
@@ -28,7 +34,9 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
         this.mapUnwrapperUtil =  mapUnwrapperUtil;
     }
 
-    @Override
+    /**
+     * Saves the game state to the database.
+     */
     public void save(GameState gameState, String saveId) {
 
         String preId = gameState.getCurrentUserMap().getUserName();
@@ -40,7 +48,9 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
         }
     }
 
-    @Override
+    /**
+     * Loads a game state from the database.
+     */
     public GameState load(String option) {
 
         String userName = null;
@@ -70,7 +80,10 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
         return new GameState(mapVO, userMapVO, false);
     }
 
-    @Override
+    /** Closes the connection with the database.
+     *
+     * @throws SQLException when error occurs while closing the connection.
+     */
     public void close() throws SQLException {
         connection.close();
     }

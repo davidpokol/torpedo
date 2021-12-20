@@ -1,4 +1,4 @@
-package hu.nye.progtech.sodoku.service.input;
+package hu.nye.torpedo.input;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;

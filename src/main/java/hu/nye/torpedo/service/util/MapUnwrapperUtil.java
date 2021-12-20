@@ -8,7 +8,7 @@ import java.util.List;
 public class MapUnwrapperUtil {
 
     /**
-     *@return two-dimensional String array, which converted by a string getting as a parameter
+     * Returns a two-dimensional String array, which converted by a string getting as a parameter.
      **/
     public String[][] convertStringToMap(String string) {
 
@@ -25,9 +25,10 @@ public class MapUnwrapperUtil {
     }
 
     /**
-     * @return two-dimensional boolean array, which converted by a string getting as a parameter
+     * Returns a two-dimensional boolean array, which converted by a string getting as a parameter.
      **/
     public boolean[][] convertStringToShipMap(String string) {
+
         List<String> rows = List.of(string.split("\n"));
         boolean[][] result = new boolean[rows.size()][rows.size()];
 
@@ -39,5 +40,4 @@ public class MapUnwrapperUtil {
         }
         return result;
     }
-
 }

@@ -3,11 +3,13 @@ package hu.nye.torpedo.service.util;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Helps in getting a map, or a part of a map.
+ */
 public class MapUtil {
 
     /**
-     * @return two dimension String array  filled with only "0" values.
+     * Returns two dimension String array  filled with only "0" values.
      **/
     public String[][] getMap(int mapSize) {
 
@@ -24,7 +26,7 @@ public class MapUtil {
     }
 
     /**
-     * @return two dimension boolean array  filled with only "0" values.
+     * Returns two dimension boolean array  filled with only "0" values.
      */
     public boolean[][] getShipMap(int mapSize) {
 
@@ -38,10 +40,9 @@ public class MapUtil {
         return result;
     }
 
-    /**
-     * @param rowIndex defines which line is going to return from the String map.
+    /** Returns a line of a String map.
      *
-     * @return returns a line of the String map.
+     * @param rowIndex defines which line is going to return from the String map.
      */
     public List<String> getRowOfMap(String[][] map, int rowIndex) {
         List<String> result = new ArrayList<>();
@@ -53,9 +54,9 @@ public class MapUtil {
         return result;
     }
 
-    /**
+    /** Returns a line of a boolean map.
+     *
      * @param rowIndex defines which line is going to return from the boolean map.
-     * @return returns a line of the boolean map.
      */
     public List<Boolean> getRowOfShipMap(boolean[][] shipMap, int rowIndex) {
         List<Boolean> result = new ArrayList<>();

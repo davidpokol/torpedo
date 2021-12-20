@@ -2,6 +2,9 @@ package hu.nye.torpedo.model;
 
 import java.util.Objects;
 
+/**
+ * Stores the data of the current game.
+ */
 public class GameState {
 
     private MapVO currentCpuMap;

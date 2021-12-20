@@ -3,12 +3,12 @@ package hu.nye.torpedo.service.util;
 import java.util.List;
 
 /**
- *
+ * This class responsible for converting lists into two-dimensional arrays.
  */
 public class FileManagerUtil {
 
     /**
-     * @return two-dimensional array converted by a String list.
+     * Returns two-dimensional array converted by a String list.
      */
     public boolean[][] getPreparedMap(List<String> lines) {
 

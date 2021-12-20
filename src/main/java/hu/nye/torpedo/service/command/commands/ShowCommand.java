@@ -3,8 +3,10 @@ package hu.nye.torpedo.service.command.commands;
 import hu.nye.torpedo.service.command.Command;
 import hu.nye.torpedo.ui.MapDisplayer;
 
+/**
+ * Shows the current USER and CPU map.
+ */
 public class ShowCommand implements Command {
-
 
     private final MapDisplayer mapDisplayer;
 

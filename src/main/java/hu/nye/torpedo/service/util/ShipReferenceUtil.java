@@ -6,8 +6,8 @@ package hu.nye.torpedo.service.util;
 public class ShipReferenceUtil {
 
     /**
-     *Formats an option to into an integer array.
-     *For example if the input is 15, the @return will be A1.
+     * Formats an option to into an integer array.
+     * For example if the input is 15, the @return will be A1.
      */
     public int[] formatOption(String rawOption) {
 
@@ -21,19 +21,18 @@ public class ShipReferenceUtil {
                 result[1] = column - 1;
 
             }
-        } catch (Exception ignored) { }
-
+        } catch (Exception ignored) {
+            //ignored
+        }
         return result;
     }
 
     private boolean isValidColumnNumber(char row) {
         return row >= 'A' && row <= 'I';
-
     }
 
     private boolean isValidRowNumber(int column) {
         return column >= 1 && column <= 9;
-
     }
 }
 

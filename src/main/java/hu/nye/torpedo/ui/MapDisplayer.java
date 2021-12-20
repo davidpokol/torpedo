@@ -10,14 +10,14 @@ public class MapDisplayer {
     GameState gameState;
 
     /**
-     *Class constructor.
+     * Class constructor.
      */
     public MapDisplayer(GameState gameState) {
         this.gameState = gameState;
     }
 
     /**
-      This method writes out the current game state to the console.
+     * This method writes out the current game state to the console.
      */
     public void showGameState() {
 
@@ -46,7 +46,5 @@ public class MapDisplayer {
             System.out.print(" " + i);
         }
         System.out.println();
-
     }
-
 }

@@ -2,6 +2,9 @@ package hu.nye.torpedo.model;
 
 import java.util.Objects;
 
+/**
+ * Stores the current USER'S data.
+ */
 public class UserMapVO extends MapVO {
 
     private final String userName;

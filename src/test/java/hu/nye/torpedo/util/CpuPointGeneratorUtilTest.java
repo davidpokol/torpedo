@@ -1,4 +1,4 @@
-package hu.nye.progtech.sodoku.service.util;
+package hu.nye.torpedo.util;
 
 public class CpuPointGeneratorUtilTest {
 

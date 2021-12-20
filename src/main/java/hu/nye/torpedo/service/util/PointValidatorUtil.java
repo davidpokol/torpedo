@@ -2,23 +2,23 @@ package hu.nye.torpedo.service.util;
 
 import hu.nye.torpedo.model.MapVO;
 
-/**
- * This class validates if a point exists.
+/** This class validates if a point exists.
+ *
  */
 public class PointValidatorUtil {
 
 
-    /**
+    /** Returns a logical value of a point exist and still untouched.
+     *
      * @param c exists on
      * @param mapVO otherwise it is false.
-     * @return value is true if a pont
+     * @return boolean value
      */
     public boolean isContinue(int[] c, MapVO mapVO) {
         String[][] userMap = mapVO.getMap();
         int size = mapVO.getMapSize();
         return isExistingPoint(c, size) && isUntouchedPoint(userMap[c[0]][c[1]]);
     }
-
 
     private boolean isExistingPoint(int[] c, int mapLength) {
 

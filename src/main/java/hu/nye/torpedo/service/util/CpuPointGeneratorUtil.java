@@ -5,6 +5,9 @@ import java.util.Random;
 import hu.nye.torpedo.model.GameState;
 import hu.nye.torpedo.model.MapVO;
 
+/**
+ * This class generates a random point in the user's map.
+ */
 public class CpuPointGeneratorUtil {
 
     private final GameState gameState;
@@ -23,7 +26,6 @@ public class CpuPointGeneratorUtil {
 
         Random random = new Random();
         MapVO mapVo = gameState.getCurrentCpuMap();
-
         int size = mapVo.getMapSize();
         int[] tip = new int[2];
         do {
@@ -33,6 +35,5 @@ public class CpuPointGeneratorUtil {
 
         } while (!"0".equals(mapVo.getMap()[tip[0]][tip[1]]));
         return tip;
-
     }
 }

@@ -96,9 +96,11 @@
                 <version>0.8.2</version>
                 <configuration>
                     <excludes>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.progtech.torpedo.model/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.model/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.configuration/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.service.exception/*</exclude>
                         <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.Main.*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.progtech.torpedo.ui/*</exclude>
+                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.ui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -127,7 +129,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.8</minimum>
+                                            <minimum>0.0</minimum>
                                         </limit>
                                     </limits>
                                 </rule>

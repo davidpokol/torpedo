@@ -1,10 +1,13 @@
 package hu.nye.torpedo.service.command.commands;
 
 import hu.nye.torpedo.model.GameState;
-import hu.nye.torpedo.persistance.JdbcGameSavesRepository;
+import hu.nye.torpedo.persistance.jdbc.JdbcGameSavesRepository;
 import hu.nye.torpedo.service.command.Command;
 import hu.nye.torpedo.service.input.DataReader;
 
+/**
+ * This class managing the game state saving to the database.
+ */
 public class SaveCommand implements Command {
 
     private static final String PATTERN = "[1-9]";
@@ -12,6 +15,9 @@ public class SaveCommand implements Command {
     private final GameState gameState;
     private final DataReader dataReader;
 
+    /**
+     * Class constructor.
+     */
     public SaveCommand(JdbcGameSavesRepository jdbcGameSavesRepository, GameState gameState, DataReader dataReader) {
         this.jdbcGameSavesRepository = jdbcGameSavesRepository;
         this.gameState = gameState;
@@ -38,6 +44,5 @@ public class SaveCommand implements Command {
 
         jdbcGameSavesRepository.save(gameState, saveId);
         System.out.println("Game saved!");
-
     }
 }

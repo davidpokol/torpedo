@@ -11,14 +11,14 @@ public class FileDataValidatorUtil {
 
     private static final String PATTERN = "^[01]+$";
 
-    /**
-     * @return a boolean value depends on the cpu's map validity
+    /** Returns a boolean value depends on the cpu's map validity.
+     *
      * @throws FileDataException when the Cpu's, which was ridden from the resources folder, is not valid
      */
     public boolean isValidMap(List<String> mapLines) throws FileDataException {
 
-        if (mapLines.size() == 0) {
-            throw new FileDataException("The CPU's map must not be empty!");
+        if (mapLines.size() < 4  || mapLines.size() > 9) {
+            throw new FileDataException("The CPU's map must be between 4 and 9");
         } else if (!isSquared(mapLines)) {
             throw new FileDataException("The CPU's map must be squared!");
         } else if (!isFilledUpWithProperValues(mapLines)) {
@@ -33,7 +33,6 @@ public class FileDataValidatorUtil {
 
         boolean result = true;
         int columns = mapLines.size();
-
         for (String item : mapLines) {
             if (item.length() != columns) {
                 result = false;
@@ -62,11 +61,11 @@ public class FileDataValidatorUtil {
         for (String item : mapLines) {
             checkedFields += item.chars().filter(ch -> ch == '1').count();
         }
-
         return  expectedNumber == checkedFields;
     }
 
-    /**
+    /** Until a number, this method sums every single number.
+     *
      * @return the sum.
      */
     public int sum(int bound) {

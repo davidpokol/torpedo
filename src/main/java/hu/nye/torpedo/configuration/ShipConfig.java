@@ -5,6 +5,9 @@ import hu.nye.torpedo.service.ship.ShipPlacer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class for SHIP classes.
+ */
 @Configuration
 public class ShipConfig {
 

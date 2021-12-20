@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<players>
+    <player>
+        <name>Zsolti</name>
+        <gamesWon>5</gamesWon>
+    </player>
+    <player>
+        <name>CPU</name>
+        <gamesWon>3</gamesWon>
+    </player>
+    <player>
+        <name>David</name>
+        <gamesWon>9</gamesWon>
+    </player>
+    <player>
+        <name>Karcsi</name>
+        <gamesWon>1</gamesWon>
+    </player>
+</players>

@@ -1,4 +1,4 @@
-package hu.nye.progtech.sodoku.service;
+package hu.nye.torpedo;
 
 import java.util.Arrays;
 

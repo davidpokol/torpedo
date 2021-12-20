@@ -5,6 +5,9 @@ import hu.nye.torpedo.service.command.Command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Exit from the game.
+ */
 public class ExitCommand implements Command {
 
     private final GameState gameState;
