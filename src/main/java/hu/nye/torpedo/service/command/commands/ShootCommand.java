@@ -2,7 +2,6 @@ package hu.nye.torpedo.service.command.commands;
 
 import hu.nye.torpedo.model.GameState;
 import hu.nye.torpedo.service.command.Command;
-import hu.nye.torpedo.service.exeption.XmlException;
 import hu.nye.torpedo.service.game.GameCycle;
 import hu.nye.torpedo.service.game.GameManager;
 import hu.nye.torpedo.service.input.DataReader;
@@ -41,7 +40,7 @@ public class ShootCommand implements Command {
 
     @Override
     public boolean canProcess(String input) {
-        return COMMAND.equals(input.toUpperCase());
+        return COMMAND.equalsIgnoreCase(input);
     }
 
     @Override

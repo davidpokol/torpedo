@@ -13,12 +13,10 @@ public class GameController {
     private static final Logger LOG = LoggerFactory.getLogger(GameController.class);
     private final GameState gameState;
     private final GameStepPerformer gameStepPerformer;
-    private final Player player;
 
-    public GameController(GameState gameState, GameStepPerformer gameStepPerformer, Player player) {
+    public GameController(GameState gameState, GameStepPerformer gameStepPerformer) {
         this.gameState = gameState;
         this.gameStepPerformer = gameStepPerformer;
-        this.player = player;
     }
 
     /**

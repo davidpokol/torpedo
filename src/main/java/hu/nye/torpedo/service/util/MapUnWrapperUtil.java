@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Converting String values into Map value objects.
  **/
-public class MapUnwrapperUtil {
+public class MapUnWrapperUtil {
 
     /**
      * Returns a two-dimensional String array, which converted by a string getting as a parameter.

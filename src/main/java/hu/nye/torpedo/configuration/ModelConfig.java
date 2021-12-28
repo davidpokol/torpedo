@@ -7,7 +7,7 @@ import hu.nye.torpedo.model.MapVO;
 import hu.nye.torpedo.model.UserMapVO;
 import hu.nye.torpedo.model.player.Player;
 import hu.nye.torpedo.model.player.Players;
-import hu.nye.torpedo.service.exeption.FileReadException;
+import hu.nye.torpedo.service.exception.FileReadException;
 import hu.nye.torpedo.service.util.MapVoInitUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

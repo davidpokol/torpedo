@@ -20,11 +20,11 @@ public class PointValidatorUtil {
         return isExistingPoint(c, size) && isUntouchedPoint(userMap[c[0]][c[1]]);
     }
 
-    private boolean isExistingPoint(int[] c, int mapLength) {
+    private boolean isExistingPoint(int[] c, int mapSize) {
 
         boolean result = false;
 
-        if (c[0] < mapLength && c[1] < mapLength && c[0] >= 0 && c[1] >= 0) {
+        if (c[0] < mapSize && c[1] < mapSize && c[0] >= 0 && c[1] >= 0) {
             result = true;
         } else {
             System.err.println("Invalid input!");

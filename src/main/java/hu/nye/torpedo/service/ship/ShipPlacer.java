@@ -12,11 +12,11 @@ public class ShipPlacer {
     public boolean[][] place(int[][] coordinates, boolean[][] map) {
 
         boolean[][] result;
-            if (coordinates[0][1] == coordinates[1][1]) {
-                result = placeVertical(coordinates, map);
-            } else {
-                result = placeHorizontal(coordinates, map);
-            }
+        if (coordinates[0][1] == coordinates[1][1]) {
+            result = placeVertical(coordinates, map);
+        } else {
+            result = placeHorizontal(coordinates, map);
+        }
         return result;
     }
 

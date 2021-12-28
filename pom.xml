@@ -96,11 +96,12 @@
                 <version>0.8.2</version>
                 <configuration>
                     <excludes>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.model/*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.configuration/*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.service.exception/*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.Main.*</exclude>
-                        <exclude>hu/nye/progtech/torpedo/hu.nye.torpedo.ui/*</exclude>
+                        <exclude>hu/nye/torpedo/model/*</exclude>
+                        <exclude>hu/nye/torpedo/model/player/*</exclude>
+                        <exclude>hu/nye/torpedo/configuration/*</exclude>
+                        <exclude>hu/nye/torpedo/service/exception/*</exclude>
+                        <exclude>hu/nye/torpedo/Main.*</exclude>
+                        <exclude>hu/nye/torpedo/ui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

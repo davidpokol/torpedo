@@ -2,7 +2,7 @@ package hu.nye.torpedo.service.util;
 
 import java.util.List;
 
-import hu.nye.torpedo.service.exeption.FileDataException;
+import hu.nye.torpedo.service.exception.FileDataException;
 
 /**
  * This class validates the CPU's map.
@@ -18,7 +18,7 @@ public class FileDataValidatorUtil {
     public boolean isValidMap(List<String> mapLines) throws FileDataException {
 
         if (mapLines.size() < 4  || mapLines.size() > 9) {
-            throw new FileDataException("The CPU's map must be between 4 and 9");
+            throw new FileDataException("The CPU's map size must be between 4 and 9");
         } else if (!isSquared(mapLines)) {
             throw new FileDataException("The CPU's map must be squared!");
         } else if (!isFilledUpWithProperValues(mapLines)) {

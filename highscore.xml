@@ -10,10 +10,18 @@
     </player>
     <player>
         <name>David</name>
-        <gamesWon>9</gamesWon>
+        <gamesWon>11</gamesWon>
     </player>
     <player>
         <name>Karcsi</name>
         <gamesWon>1</gamesWon>
+    </player>
+    <player>
+        <name>name</name>
+        <gamesWon>34</gamesWon>
+    </player>
+    <player>
+        <name>The CPU</name>
+        <gamesWon>5</gamesWon>
     </player>
 </players>

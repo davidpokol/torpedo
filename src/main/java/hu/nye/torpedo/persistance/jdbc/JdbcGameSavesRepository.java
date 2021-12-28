@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import hu.nye.torpedo.model.GameState;
 import hu.nye.torpedo.model.MapVO;
 import hu.nye.torpedo.model.UserMapVO;
-import hu.nye.torpedo.service.util.MapUnwrapperUtil;
+import hu.nye.torpedo.service.util.MapUnWrapperUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,13 +21,13 @@ public class JdbcGameSavesRepository implements AutoCloseable {
     private static final String SELECT_STATEMENT = "SELECT * FROM game_saves WHERE ID = ?;";
     private final Connection connection;
     private final JdbcGameManager jdbcGameManager;
-    private final MapUnwrapperUtil mapUnwrapperUtil;
+    private final MapUnWrapperUtil mapUnwrapperUtil;
 
     /**
      * Class constructor.
      */
     public JdbcGameSavesRepository(Connection connection, JdbcGameManager jdbcGameManager,
-                                   MapUnwrapperUtil mapUnwrapperUtil) {
+                                   MapUnWrapperUtil mapUnwrapperUtil) {
         this.connection = connection;
         this.jdbcGameManager = jdbcGameManager;
 

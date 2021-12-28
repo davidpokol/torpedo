@@ -1,4 +1,4 @@
-package hu.nye.torpedo.service.exeption;
+package hu.nye.torpedo.service.exception;
 
 /**
  * Throws when there is a problem with the CpuMap.txt.

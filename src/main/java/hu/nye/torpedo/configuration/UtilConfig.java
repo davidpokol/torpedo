@@ -9,7 +9,7 @@ import hu.nye.torpedo.service.util.CpuPointGeneratorUtil;
 import hu.nye.torpedo.service.util.FileDataValidatorUtil;
 import hu.nye.torpedo.service.util.FileManagerUtil;
 import hu.nye.torpedo.service.util.MapToStringUtil;
-import hu.nye.torpedo.service.util.MapUnwrapperUtil;
+import hu.nye.torpedo.service.util.MapUnWrapperUtil;
 import hu.nye.torpedo.service.util.MapUtil;
 import hu.nye.torpedo.service.util.MapVoInitUtil;
 import hu.nye.torpedo.service.util.PointValidatorUtil;
@@ -59,8 +59,8 @@ public class UtilConfig {
     }
 
     @Bean
-    public MapUnwrapperUtil mapUnwrapperUtil() {
-        return new MapUnwrapperUtil();
+    public MapUnWrapperUtil mapUnwrapperUtil() {
+        return new MapUnWrapperUtil();
     }
 
     @Bean

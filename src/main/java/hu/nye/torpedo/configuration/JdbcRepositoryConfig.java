@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import hu.nye.torpedo.persistance.jdbc.JdbcGameManager;
 import hu.nye.torpedo.persistance.jdbc.JdbcGameSavesRepository;
 import hu.nye.torpedo.service.util.MapToStringUtil;
-import hu.nye.torpedo.service.util.MapUnwrapperUtil;
+import hu.nye.torpedo.service.util.MapUnWrapperUtil;
 import hu.nye.torpedo.service.util.MapUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +30,7 @@ public class JdbcRepositoryConfig {
     @Bean
     public JdbcGameSavesRepository jdbcGameSavesRepository(Connection connection, JdbcGameManager jdbcGameManager,
                                                            MapUtil mapUtil, MapToStringUtil mapConverterUtil,
-                                                           MapUnwrapperUtil mapUnwrapperUtil) {
+                                                           MapUnWrapperUtil mapUnwrapperUtil) {
         return new JdbcGameSavesRepository(connection, jdbcGameManager, mapUnwrapperUtil);
     }
 

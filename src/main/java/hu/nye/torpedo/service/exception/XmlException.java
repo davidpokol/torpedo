@@ -1,4 +1,4 @@
-package hu.nye.torpedo.service.exeption;
+package hu.nye.torpedo.service.exception;
 
 /**
  * Throws when error occurs while managing a xml file.

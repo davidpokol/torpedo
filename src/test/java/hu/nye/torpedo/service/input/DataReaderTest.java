@@ -1,4 +1,4 @@
-package hu.nye.torpedo.input;
+package hu.nye.torpedo.service.input;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import hu.nye.torpedo.service.input.DataReader;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -36,10 +35,13 @@ public class DataReaderTest {
 
     @Test
     public void testReadInputShouldReturnStringInputReadByBufferedReader() throws IOException {
+
         //Given
         given(bufferedReader.readLine()).willReturn(STRING_INPUT);
+
         //When
         String result = underTest.readInput();
+
         //Then
         assertEquals(STRING_INPUT, result);
 
@@ -47,6 +49,7 @@ public class DataReaderTest {
 
     @Test
     public void testReadInputShouldReturnNullWhenBufferedReaderThrowsException() throws IOException {
+
         //Given
         doThrow(IOException.class).when(bufferedReader).readLine();
 
@@ -56,8 +59,4 @@ public class DataReaderTest {
         //Then
         assertNull(result);
     }
-
-
-
-
 }

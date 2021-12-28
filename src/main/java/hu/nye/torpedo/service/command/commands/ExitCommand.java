@@ -21,7 +21,7 @@ public class ExitCommand implements Command {
 
     @Override
     public boolean canProcess(String input) {
-        return COMMAND.equals(input.toUpperCase());
+        return COMMAND.equalsIgnoreCase(input);
     }
 
     @Override

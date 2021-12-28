@@ -5,8 +5,8 @@ import java.util.List;
 
 import hu.nye.torpedo.model.MapVO;
 import hu.nye.torpedo.model.UserMapVO;
-import hu.nye.torpedo.service.exeption.FileDataException;
-import hu.nye.torpedo.service.exeption.FileReadException;
+import hu.nye.torpedo.service.exception.FileDataException;
+import hu.nye.torpedo.service.exception.FileReadException;
 import hu.nye.torpedo.service.input.DataReader;
 import hu.nye.torpedo.service.input.MapReader;
 import hu.nye.torpedo.service.ship.ShipGenerator;

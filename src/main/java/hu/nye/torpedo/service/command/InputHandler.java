@@ -2,8 +2,6 @@ package hu.nye.torpedo.service.command;
 
 import java.util.List;
 
-import hu.nye.torpedo.service.exeption.XmlException;
-
 /**
  * This class handles the input commands.
  */

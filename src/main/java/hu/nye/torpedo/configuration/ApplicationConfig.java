@@ -21,9 +21,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public GameController gameController(GameState gameState, GameStepPerformer gameStepPerformer,
-                                         Player player) {
-        return new GameController(gameState, gameStepPerformer, player);
+    public GameController gameController(GameState gameState, GameStepPerformer gameStepPerformer) {
+        return new GameController(gameState, gameStepPerformer);
     }
 
     @Bean
